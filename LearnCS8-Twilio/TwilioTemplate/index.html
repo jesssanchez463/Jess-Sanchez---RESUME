@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Ravioli the Rat: The Rat That Will Keep You Company Wherever You Go!">
+    <meta name="author" content="862385994">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Title of your Website -->
+    <title>Ravioli the Rat</title>
+    <link href="product.css" rel="stylesheet">
+  </head>     
+  <body>
+    <nav class="site-header sticky-top py-1">
+    <!-- Top Menu Bar -->
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-1" href="https://sliding.toys/mystic-square/8-puzzle/"target="_blank">Game</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-2" href="https://allourway.com/homemade-italian-ravioli-meat-cheese-filling/"target="_blank">Ravioli</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-3" href="https://ratguide.com/care-intro"target="_blank">Care</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-4" href="https://maze.toys/mazes/mini/daily/"target="_blank">Pastime</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-5" href="https://paint.toys/"target="_blank">Create</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-6" href="https://puginarug.com/"target="_blank">Buddies</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-7" href="https://binarypiano.com/"target="_blank">Music</a>
+    </div>
+</nav>
+<!-- Main Header Section h1-->
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-0 text-center bg-light">
+    <div class="col-md-8 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Preorder Your First Visit From Ravioli the Rat Today!</h1>
+        <p class="lead font-weight-normal">Ravioli the Rat is the only friend you will ever need, he is a fun-loving, laidback, and yet very philosophical fellow. When you preorder a visit from Ravioli, you are guaranteed a spontaneous visit from him on a day when he knows you are free. He just knows! So go ahead and preorder, you will not regret it!</p>
+        <a class="btn btn-outline-secondary" href="https://youtube.com/shorts/hM7eg1phBAs?feature=share"></a>
+    </div>
+    <!-- Left Tile -->
+<div class="d-md-flex flex-md-equal w-100">
+    <div class="bg-dark pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+            <h2 class="display-5">Sign up</h2>
+            <p class="lead">Sign up now to get instant access to our educational content</p>
+        </div>
+        <!-- Web form when submitted will send a text message -->
+        <form class="p-2" onsubmit="sendTextMessage(); return false;">
+            <!-- Full Name Form Field -->
+            <div class="form-group">
+                <label for="example-first-name">Full Name</label>
+                <input type="text" value="Full Name" class="form-control" id="example-first-name" aria-describedby="emailHelp">
+            </div>
+            <!-- Phone Number Form Field -->
+            <div class="form-group">
+                <label for="example-tel-input">Phone number</label>
+                <input type="tel" class="form-control" value="1408555555" id="example-tel-input">
+            </div>
+            <!-- JavaScript that handles onSubmit logic -->
+            <!-- Configure the XHR request below with your own credentials -->
+            <script>
+            function sendTextMessage() {
+                console.log("Hello world!");
+                var xhr = new XMLHttpRequest();
+                var accountSID = "ACac85fcb58296df381fab927fd46937b4";
+                var authToken = "c62ed23ad9e8e5c02c6c85f9543d9748";
+                var base64encoded = accountSID + ":" + authToken;
+                var params = "To=" + document.getElementById('example-tel-input').value + "&From=" + "18559374528" + "&Body=" + "Hello " + document.getElementById('example-first-name').value + "...Rats Love Cheese!"
+                xhr.open("POST", "https://api.twilio.com/2010-04-01/Accounts/" + accountSID + "/Messages.json", true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.setRequestHeader('Authorization', 'Basic ' + btoa(base64encoded));
+                xhr.send(params);
+            }
+            </script>
+            <!-- Submit button that will execute the sendTextMessage function -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+<!-- Right Tile -->
+    <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+            <h2 class="display-5">Know Your Friend</h2>
+            <p class="lead">Ravioli is very passionate about his work, be passionate about his visit :)</p>
+            <img class="mx-auto" src="example_image.jpg" height="250px">
+        </div>
+        <div class="mx-auto" style="width: 80%; height: 100px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+</div>
+  </body>
+</html>
